@@ -5,6 +5,8 @@ cmake_minimum_required(VERSION 3.4.1)
 find_package(JNI REQUIRED)
 find_package(Threads REQUIRED)
 
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
 include_directories(${JAVA_INCLUDE_PATH})
 include_directories(${JAVA_INCLUDE_PATH2})
 

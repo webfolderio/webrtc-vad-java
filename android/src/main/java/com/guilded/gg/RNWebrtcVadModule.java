@@ -35,7 +35,7 @@ public class RNWebrtcVadModule extends ReactContextBaseJavaModule implements Aud
         SoLoader.loadLibrary("voice-activity-detector");
     }
 
-    private static native void initializeVad();
+    private static native void initializeVad(int mode);
 
     private static native void stopVad();
 
@@ -51,7 +51,7 @@ public class RNWebrtcVadModule extends ReactContextBaseJavaModule implements Aud
     public void start(ReadableMap options) {
         Log.d(getName(), "Starting");
 
-        RNWebrtcVadModule.initializeVad();
+        RNWebrtcVadModule.initializeVad(0);
         final AudioInputController inputController = AudioInputController.getInstance();
 
         // If not specified, will match HW sample, which could be too high.

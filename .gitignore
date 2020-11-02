@@ -109,3 +109,8 @@ StockReactionIcons.jsx
 
 # MacOSX dot files
 ._*
+/java/.classpath
+/java/.project
+/java/.settings
+/java/build
+/java/target

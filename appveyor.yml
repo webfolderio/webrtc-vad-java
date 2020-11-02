@@ -1,0 +1,14 @@
+version: 1.0.'{build}'
+
+image:
+ - Visual Studio 2017
+
+configuration: Release
+
+platform: x64
+stack: jdk 11
+
+build_script:
+  - cmd: vcpkg.exe install pthreads:x64-windows
+  - cmd: cd java && build.bat
+  - cmd: mvn -DskipTests -q package

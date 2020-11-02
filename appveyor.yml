@@ -11,4 +11,4 @@ stack: jdk 11
 build_script:
   - cmd: vcpkg.exe install pthreads:x64-windows
   - cmd: cd java && build.bat
-  - cmd: mvn -DskipTests -q package
+  - cmd: cd java && mvn -DskipTests -q package

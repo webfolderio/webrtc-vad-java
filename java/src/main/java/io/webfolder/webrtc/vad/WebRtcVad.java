@@ -2,11 +2,15 @@ package io.webfolder.webrtc.vad;
 
 public class WebRtcVad {
 
-    private static native void initializeVad(int mode);
+	static {
+		System.loadLibrary("vad");
+	}
 
-    private static native void stopVad();
+    public static native void initializeVad(int mode);
 
-    private static native boolean isVoice(short[] audioFrame,
+    public static native void stopVad();
+
+    public static native boolean isVoice(short[] audioFrame,
                                           int     sampleRate,
                                           int     frameLength);
 }

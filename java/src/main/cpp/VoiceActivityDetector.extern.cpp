@@ -19,7 +19,7 @@ void stop() {
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_guilded_gg_RNWebrtcVadModule_initializeVad(
+Java_io_webfolder_webrtc_vad_WebRtcVad_initializeVad(
         JNIEnv
         *env,
         jobject /* this */,
@@ -29,7 +29,7 @@ Java_com_guilded_gg_RNWebrtcVadModule_initializeVad(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_guilded_gg_RNWebrtcVadModule_stopVad(
+Java_io_webfolder_webrtc_vad_WebRtcVad_stopVad(
         JNIEnv
         *env,
         jobject /* this */) {
@@ -39,7 +39,7 @@ Java_com_guilded_gg_RNWebrtcVadModule_stopVad(
 
 extern "C" JNIEXPORT jboolean
 JNICALL
-Java_com_guilded_gg_RNWebrtcVadModule_isVoice(
+Java_io_webfolder_webrtc_vad_WebRtcVad_isVoice(
         JNIEnv *env,
         jobject /* this */,
         jshortArray audioFrame,

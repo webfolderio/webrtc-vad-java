@@ -114,3 +114,5 @@ StockReactionIcons.jsx
 /java/.settings
 /java/build
 /java/target
+/java/pthreadVC3.dll
+/java/vad.dll

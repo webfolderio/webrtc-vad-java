@@ -1,4 +1,4 @@
-project(vad)
+project(webrtc-vad-java)
 
 cmake_minimum_required(VERSION 3.4.1)
 
@@ -16,7 +16,7 @@ file(GLOB webrtc_vad_sources
         )
 
 add_library(
-        vad
+        webrtc-vad-java
         SHARED
         ${webrtc_vad_sources}
         src/main/cpp/VoiceActivityDetector.cpp
@@ -29,6 +29,6 @@ include_directories(../)
 include_directories(../webrtc/common_audio/vad/include/)
 include_directories(../webrtc/common_audio/signal_processing/include/)
 
-target_include_directories(vad PRIVATE ${PTHREAD_INCLUDE_DIR})
+target_include_directories(webrtc-vad-java PRIVATE ${PTHREAD_INCLUDE_DIR})
 
-target_link_libraries(vad PThreads4W::PThreads4W)
+target_link_libraries(webrtc-vad-java PThreads4W::PThreads4W)

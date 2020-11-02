@@ -12,3 +12,11 @@ build_script:
   - cmd: vcpkg.exe install pthreads:x64-windows
   - cmd: cd java && build.bat
   - cmd: cd java && mvn -DskipTests -q package
+
+artifacts:
+  - path: webrtc-vad-java/java/build/Release/webrtc-vad-java.dll
+    name: webrtc-vad-java.dll
+  - path: webrtc-vad-java/java/build/Release/pthreadVC3.dll
+    name: pthreadVC3.dll
+  - path: webrtc-vad-java/java/build/Release/webrtc-vad-java-1.0.0.jar
+    name: webrtc-vad-java

@@ -11,6 +11,6 @@ public class WebRtcVad {
     public static native void stopVad();
 
     public static native boolean isVoice(short[] audioFrame,
-                                          int     sampleRate,
-                                          int     frameLength);
+                                         int     sampleRate,
+                                         int     frameLength);
 }

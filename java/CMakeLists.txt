@@ -3,7 +3,10 @@ project(webrtc-vad-java)
 cmake_minimum_required(VERSION 3.4.1)
 
 find_package(JNI REQUIRED)
-find_package(pthreads REQUIRED)
+
+if(WIN32)
+  find_package(pthreads REQUIRED)
+endif()
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
@@ -31,4 +34,8 @@ include_directories(../webrtc/common_audio/signal_processing/include/)
 
 target_include_directories(webrtc-vad-java PRIVATE ${PTHREAD_INCLUDE_DIR})
 
-target_link_libraries(webrtc-vad-java PThreads4W::PThreads4W)
+if(WIN32)
+  target_link_libraries(webrtc-vad-java PThreads4W::PThreads4W)
+else()
+  target_link_libraries(webrtc-vad-java pthread)
+endif()

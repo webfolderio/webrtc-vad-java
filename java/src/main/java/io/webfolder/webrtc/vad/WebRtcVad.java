@@ -14,7 +14,7 @@ public class WebRtcVad {
         if (WINDOWS) {
             System.loadLibrary("webrtc-vad-java");
         } else {
-            System.loadLibrary("lib-webrtc-vad-java");
+            System.loadLibrary("libwebrtc-vad-java");
         }
     }
 

@@ -10,7 +10,7 @@ stack: jdk 8
 
 build_script:
   - sh: cd java && mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release .. && make
-  - sh: cd $APPVEYOR_BUILD_FOLDER && cp java/build/libwebrtc-vad-java.so java/ && ls -l
+  - sh: cd $APPVEYOR_BUILD_FOLDER && cp java/build/libwebrtc-vad-java.so java/ && ls -l java/
   - sh: cd $APPVEYOR_BUILD_FOLDER && cd java && mvn -q package
   - cmd: vcpkg.exe install pthreads:x64-windows
   - cmd: cd java && build.bat

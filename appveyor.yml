@@ -11,9 +11,13 @@ stack: jdk 11
 
 build_script:
   - sh: cd java && mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release .. && make
+  - sh: cp java/build/libwebrtc-vad-java.so java/
+  - sh: cd java && mvn -q package
   - cmd: vcpkg.exe install pthreads:x64-windows
   - cmd: cd java && build.bat
-  - cmd: cd java && mvn -DskipTests -q package
+  - cmd: copy java\build\Release\webrtc-vad-java.dll java\
+  - cmd: copy java\build\Release\pthreadVC3.dll java\
+  - cmd: cd java && mvn -q package
 
 artifacts:
   - path: java/build/libwebrtc-vad-java.so

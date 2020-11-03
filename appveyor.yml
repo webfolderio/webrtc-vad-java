@@ -16,6 +16,7 @@ build_script:
   - cmd: cd java && mvn -DskipTests -q package
 
 artifacts:
+  - path: java/build/libwebrtc-vad-java.so
   - path: java/build/Release/webrtc-vad-java.dll
     name: webrtc-vad-java.dll
   - path: java/build/Release/pthreadVC3.dll
